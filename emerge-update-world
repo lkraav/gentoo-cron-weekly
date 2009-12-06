@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec /usr/bin/nice emerge --update --deep --newuse --pretend world 2>&1 > /dev/null
