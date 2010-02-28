@@ -1,0 +1,1 @@
+/secure/home/leho/dev/gist-equery-list-wikify.git/equery-list-wikify.py
