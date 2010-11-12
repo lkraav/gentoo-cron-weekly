@@ -1,3 +1,2 @@
 #!/bin/sh
-cd /etc
-git status
+git --git-dir=/etc/.git --work-tree=/etc status
