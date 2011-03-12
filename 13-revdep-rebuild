@@ -1,0 +1,3 @@
+#!/bin/sh
+PATH=$PATH:/usr/local/bin
+revdep-rebuild --no-progress --pretend --ignore -- --color y 2>&1 | ansimail -s "$0"

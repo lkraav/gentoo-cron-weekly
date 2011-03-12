@@ -1,5 +1,0 @@
-#!/bin/sh
-eix-sync -C --quiet | ansi2html | htmlmail -s "cron.weekly: eix-sync" root
-emerge --update --deep --newuse --pretend --tree --changelog --nospinner --color y @world | ansi2html | htmlmail -s "cron.weekly: emerge update pretend @world" root
-emerge --depclean --pretend --with-bdeps y --nospinner --color y | ansi2html | htmlmail -s "cron.weekly: emerge depclean pretend" root
-revdep-rebuild --no-progress --pretend --ignore -- --color y 2>&1 | ansi2html | htmlmail -s "cron.weekly: revdep-rebuild pretend" root

@@ -1,0 +1,4 @@
+#!/bin/sh
+PATH=$PATH:/usr/local/bin
+#emerge --depclean --pretend --with-bdeps y --nospinner --color y 2>&1 | ansi2html | htmlmail -s "$0" root
+emerge --depclean --pretend --with-bdeps y --nospinner --color y 2>&1 | ansimail -s "$0"
