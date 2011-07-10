@@ -1,0 +1,14 @@
+#!/bin/sh
+PATH=$PATH:/usr/local/bin
+TODAY=$(date +%F)
+
+rsync -avhL --cvs-exclude --delete-excluded --delete /secure/home/leho/portage/ /var/lib/layman/.squash/overlays/leho 2>&1 | ansimail -s "$0"
+umount /mnt/gentoo/portage.sqfs
+
+mksquashfs /mnt/gentoo/portage /mnt/gentoo/portage-$TODAY.sqfs -noappend -no-progress 2>&1 | ansimail -s "$0"
+mksquashfs /var/lib/layman/.squash /mnt/gentoo/portage-$TODAY.sqfs -no-progress 2>&1 | ansimail -s "$0"
+mksquashfs /mnt/gentoo/eix /mnt/gentoo/portage-$TODAY.sqfs -no-progress -keep-as-directory 2>&1 | ansimail -s "$0"
+ln -sfn /mnt/gentoo/portage-$TODAY.sqfs /mnt/gentoo/portage-current.sqfs
+chmod 755 /mnt/gentoo/portage-$TODAY.sqfs
+
+mount /mnt/gentoo/portage.sqfs
