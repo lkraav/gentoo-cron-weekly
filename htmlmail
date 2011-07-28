@@ -1,0 +1,2 @@
+#!/bin/sh
+mail -a "Content-type: text/html; charset=utf-8" "$@"
