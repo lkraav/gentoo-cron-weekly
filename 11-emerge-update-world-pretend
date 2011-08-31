@@ -1,3 +1,3 @@
 #!/bin/sh
 PATH=$PATH:/usr/local/bin
-emerge --update --deep --newuse --pretend --tree --changelog --nospinner --color y @world 2>&1 | ansimail -s "$0"
+emerge --update --deep --newuse --pretend --tree --nospinner --color y --getbinpkgonly @world 2>&1 | ansimail -s "$0"
