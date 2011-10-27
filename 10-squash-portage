@@ -1,5 +1,6 @@
 #!/bin/sh
 set -x
+MAILTO="${MAILTO:-root}"
 PATH=$PATH:/usr/local/bin
 
 [ -f "$0.rc" ] && . "$0.rc" || exit 1

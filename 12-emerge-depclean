@@ -1,3 +1,4 @@
 #!/bin/sh
+MAILTO="${MAILTO:-root}"
 PATH=$PATH:/usr/local/bin
 emerge --depclean --pretend --with-bdeps y --nospinner --color y 2>&1 | ansimail -s "$0"

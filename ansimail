@@ -1,2 +1,2 @@
 #!/bin/sh
-ansi2html - | htmlmail "$@" root
+ansi2html.sh - | htmlmail "$@"
